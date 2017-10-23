@@ -168,8 +168,11 @@ clear(({code,data})=>{
 ```
 > 详细文档请移步 [https://sm.ms/doc/](https://sm.ms/doc/) 
 
-## 一些说明
-1. 感谢 sm.ms 提供的图床服务。
-2. sm.ms 并不是我的站点,本人跟 sm.ms 作者并不认识。
+## 感谢
+感谢 sm.ms 提供的图床服务。
+> sm.ms 并不是我的站点。
+
+[https://github.com/96qbhy/smms](https://github.com/96qbhy/smms)  
+96qbhy@gmail.com
 
 
