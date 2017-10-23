@@ -1,17 +1,17 @@
-# upload-img
+# smms
 [sm.ms](https://sm.ms) 图床上传插件
 
 ## 安装
 ```bash
-npm install upload-img
+npm install smms
 ```
 
 ## 使用
 ```javascript
 // es6 
-// import uploadImg from 'upload-img';
+// import uploadImg from 'smms';
 // require
-const uploadImg = require('upload-img');
+const uploadImg = require('smms');
 // file 应为 input[type=file] 拿到的 fileList 中的其中一个文件
 uploadImg(file).then(data=>{
     // todo
@@ -23,7 +23,7 @@ const input = $('#input');
 
 input.on('change', function (e) {
     if(e.target.files.length > 0){
-        uploadImage(e.target.files[0]).then(data => {
+        uploadImg(e.target.files[0]).then(data => {
             console.log(data);
         });
     }
@@ -109,4 +109,67 @@ input.on('change', function (e) {
         </tr>
     </tbody>
 </table>
+
+## 错误列表
+ <table class="table table-bordered table-striped js-options-table" style="width: 400px;">
+    <tr><td>Access Denied.</td></tr>
+    <tr><td>Upload file count limit.</td></tr>
+    <tr><td>Upload file frequency limit.</td></tr>
+    <tr><td>Server error. Upload directory isn't writable.</td></tr>
+    <tr><td>No files were uploaded.</td></tr>
+    <tr><td>File is empty.</td></tr>
+    <tr><td>File is too large.</td></tr>
+    <tr><td>File has an invalid extension.</td></tr>
+    <tr><td>Could not save uploaded file.</td></tr>
+</table>
+
+## 响应示例  
+1. 成功示例  
+```
+{
+    "code": "success",
+    "data": {
+        width: 1157,
+        height: 680,
+        filename: "image_2015-08-26_10-54-48.png",
+        storename: "56249afa4e48b.png",
+        size: 69525,
+        path: "/2015/10/19/56249afa4e48b.png",
+        hash: "nLbCw63NheaiJp1",
+        timestamp: 1445239546,
+        url: "https://ooo.0o0.ooo/2015/10/19/56249afa4e48b.png",
+        delete: "https://sm.ms/api/delete/nLbCw63NheaiJp1"
+    }
+}
+```
+2. 失败示例  
+```
+{
+    code: "error",
+    msg: "No files were uploaded."
+}
+```
+
+## 其他 API
+1. 上传历史
+```javascript
+import {list} from 'smms';
+list(({code,data})=>{
+    console.log(data);    
+})
+```
+
+2. 清除历史上传
+```javascript
+import {clear} from 'smms';
+clear(({code,data})=>{
+    console.log(data);    
+})
+```
+> 详细文档请移步 [https://sm.ms/doc/](https://sm.ms/doc/) 
+
+## 一些说明
+1. 感谢 sm.ms 提供的图床服务。
+2. sm.ms 并不是我的站点,本人跟 sm.ms 作者并不认识。
+
 
