@@ -9,7 +9,7 @@
 
     var axios = window.axios || require('axios');
 
-    function uploadImg() {
+    function uploadImg(file) {
         var data = new FormData();
         data.append('smfile', file);
         data.append('ssl', true);
