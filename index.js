@@ -29,7 +29,7 @@
     };
 
     smms.remove = function (hash) {
-        return axios.get('https://sm.ms/api/delete' + hash).then(getResponse);
+        return axios.get('https://sm.ms/api/delete/' + hash).then(getResponse);
     };
 
     if (typeof module !== 'undefined' && module.exports) {
