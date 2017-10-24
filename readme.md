@@ -154,7 +154,7 @@ input.on('change', function (e) {
 1. 上传历史
 ```javascript
 import {list} from 'smms';
-list(({code,data})=>{
+list().then(({code,data})=>{
     console.log(data);    
 })
 ```
@@ -162,7 +162,15 @@ list(({code,data})=>{
 2. 清除历史上传
 ```javascript
 import {clear} from 'smms';
-clear(({code,data})=>{
+clear().then(({code,data})=>{
+    console.log(data);    
+})
+```
+
+3. 删除指定文件
+```javascript
+import {remove} from 'smms';
+remove(hash).then(({code,data})=>{
     console.log(data);    
 })
 ```

@@ -28,6 +28,10 @@
         return axios.get('https://sm.ms/api/clear').then(getResponse);
     };
 
+    smms.remove = function () {
+        return axios.get('https://sm.ms/api/delete' + hash).then(getResponse);
+    };
+
     if (typeof module !== 'undefined' && module.exports) {
         module.exports = smms;
     } else if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
