@@ -28,7 +28,7 @@
         return axios.get('https://sm.ms/api/clear').then(getResponse);
     };
 
-    smms.remove = function () {
+    smms.remove = function (hash) {
         return axios.get('https://sm.ms/api/delete' + hash).then(getResponse);
     };
 
