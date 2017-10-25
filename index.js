@@ -10,7 +10,11 @@
     var axios = window.axios || require('axios');
 
     function getResponse(data) {
-        return data.data;
+        var response = data.data;
+        if (response.code !== 'success') {
+            throw new Error(response.msg);
+        }
+        return response;
     }
 
     function smms(file) {
@@ -29,7 +33,7 @@
     };
 
     smms.remove = function (hash) {
-        return axios.get('https://sm.ms/api/delete/' + hash).then(getResponse);
+        return axios.get('https://sm.ms/api/delete/' + hash);
     };
 
     if (typeof module !== 'undefined' && module.exports) {
