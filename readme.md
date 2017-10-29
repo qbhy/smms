@@ -170,7 +170,7 @@ clear().then(({code,data})=>{
 3. 删除指定文件
 ```javascript
 import {remove} from 'smms';
-remove(hash).then(({code,data})=>{
+remove(hash).then(()=>{
     console.log(data);    
 })
 ```
